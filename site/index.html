@@ -37,7 +37,7 @@
 
     <script>
       async function load() {
-        const res = await fetch('./events.json', { cache: 'no-store' });
+        const res = await fetch(`./events.json?t=${Date.now()}`, { cache: 'no-store' });
         const data = await res.json();
         return data.events || [];
       }
