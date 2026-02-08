@@ -3,36 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bay Area VC Events</title>
+    <title>Bay Area VC Events v2</title>
     <style>
       body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; background: #f9fafb; color: #111827; }
-      .container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
-      h1 { font-size: 1.875rem; font-weight: 700; margin-bottom: 0.5rem; }
-      .muted { color: #6b7280; font-size: 0.875rem; }
-      .search-box { margin: 1.5rem 0; }
-      input { padding: 0.75rem 1rem; width: 100%; border: 1px solid #d1d5db; border-radius: 0.5rem; box-sizing: border-box; font-size: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-      .event-card { background: white; padding: 1.25rem; border-radius: 0.75rem; margin-bottom: 1rem; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-      .event-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
-      .event-source { font-weight: 600; color: #4f46e5; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.025em; }
-      .event-title { font-size: 1.125rem; font-weight: 700; line-height: 1.4; margin: 0.25rem 0; }
+      .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+      h1 { font-size: 1.875rem; font-weight: 800; margin: 0 0 0.25rem; }
+      .muted { color: #6b7280; font-size: 0.9rem; }
+      .topbar { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; margin: 1.25rem 0; }
+      input { padding: 0.75rem 1rem; width: min(560px, 100%); border: 1px solid #d1d5db; border-radius: 0.75rem; box-sizing: border-box; font-size: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+      .counts { font-size: 0.85rem; color: #6b7280; }
+
+      .event-card { background: white; padding: 1.1rem 1.15rem; border-radius: 0.85rem; margin-bottom: 0.9rem; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+      .event-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+      .event-source { font-weight: 700; color: #4f46e5; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.06em; }
+      .event-title { font-size: 1.125rem; font-weight: 800; line-height: 1.35; margin: 0.25rem 0 0.2rem; }
       .event-title a { color: #111827; text-decoration: none; border-bottom: 2px solid transparent; }
       .event-title a:hover { border-bottom-color: #4f46e5; }
-      .meta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.75rem; font-size: 0.875rem; color: #4b5563; }
-      .meta-item { display: flex; align-items: center; gap: 0.25rem; }
-      .badge { padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; background: #f3f4f6; color: #374151; }
+      .meta-row { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; margin-top: 0.65rem; font-size: 0.9rem; color: #374151; }
+      .meta-item { display: flex; align-items: center; gap: 0.35rem; }
+      .badge { padding: 0.25rem 0.55rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 650; background: #f3f4f6; color: #374151; white-space: nowrap; }
       .badge-price { background: #dcfce7; color: #166534; }
+      .badge-city { background: #e0e7ff; color: #3730a3; }
+
+      .footer { margin-top: 2rem; color: #6b7280; font-size: 0.85rem; }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>Bay Area VC Events</h1>
-      <p class="muted">Live monitoring of venture and tech community events.</p>
+      <div class="muted">Only upcoming events • sorted by date • click any title to RSVP.</div>
 
-      <div class="search-box">
-        <input id="q" placeholder="Search by city, host, or keyword (AI, SF, Demo Day)..." />
+      <div class="topbar">
+        <input id="q" placeholder="Search: AI, demo day, Palo Alto, YC, pitch..." />
+        <div class="counts" id="counts"></div>
       </div>
 
       <div id="list"></div>
+
+      <div class="footer">
+        Tip: if an event is missing a date, it’s being scraped from a non-structured page. We’ll keep improving source-specific parsing.
+      </div>
     </div>
 
     <script>
@@ -42,25 +52,48 @@
         return data.events || [];
       }
 
+      function inferCity(location) {
+        const l = (location || '').toLowerCase();
+        if (!l) return null;
+        if (l.includes('san francisco') || l.includes(' sf')) return 'San Francisco';
+        if (l.includes('palo alto')) return 'Palo Alto';
+        if (l.includes('mountain view')) return 'Mountain View';
+        if (l.includes('menlo park')) return 'Menlo Park';
+        if (l.includes('redwood city')) return 'Redwood City';
+        if (l.includes('sunnyvale')) return 'Sunnyvale';
+        if (l.includes('san jose')) return 'San Jose';
+        if (l.includes('oakland')) return 'Oakland';
+        if (l.includes('berkeley')) return 'Berkeley';
+        return null;
+      }
+
       function render(events, q) {
         const list = document.getElementById('list');
+        const counts = document.getElementById('counts');
         list.innerHTML = '';
+
         const query = (q || '').toLowerCase().trim();
-        
+        const now = new Date();
+
+        // 1) Only show events with parsed dates, and only upcoming
         let filtered = events.filter(e => {
+          if (!e.start) return false;
+          const d = new Date(e.start);
+          if (Number.isNaN(d.getTime())) return false;
+          if (d < now) return false;
+
           if (!query) return true;
-          const searchStr = `${e.title} ${e.source_name} ${e.location} ${e.source_url}`.toLowerCase();
+          const searchStr = `${e.title} ${e.source_name} ${e.location} ${e.rsvp_url} ${e.source_url}`.toLowerCase();
           return searchStr.includes(query);
         });
 
-        filtered.sort((a, b) => {
-          const da = a.start ? new Date(a.start) : new Date('2099-01-01');
-          const db = b.start ? new Date(b.start) : new Date('2099-01-01');
-          return da - db;
-        });
+        // 2) Sort by date/time
+        filtered.sort((a, b) => new Date(a.start) - new Date(b.start));
+
+        counts.textContent = `${filtered.length} upcoming`;
 
         if (!filtered.length) {
-          list.innerHTML = '<div class="muted">No upcoming events found matching your search.</div>';
+          list.innerHTML = '<div class="muted">No upcoming events match your search.</div>';
           return;
         }
 
@@ -68,34 +101,32 @@
           const card = document.createElement('div');
           card.className = 'event-card';
 
-          const start = e.start ? new Date(e.start) : null;
-          const dateStr = start ? start.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) : 'Date TBA';
-          const timeStr = start ? start.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : '';
+          const start = new Date(e.start);
+          const dateStr = start.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+          const timeStr = start.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
 
-          let city = 'Bay Area';
-          if (e.location) {
-            const l = e.location.toLowerCase();
-            if (l.includes('san francisco') || l.includes(' sf')) city = 'San Francisco';
-            else if (l.includes('palo alto')) city = 'Palo Alto';
-            else if (l.includes('mountain view')) city = 'Mountain View';
-            else if (l.includes('menlo park')) city = 'Menlo Park';
-            else if (l.includes('san jose')) city = 'San Jose';
-          }
-
+          const city = e.city || inferCity(e.location) || 'Bay Area';
+          const price = e.price || (e.price === 'Free' ? 'Free' : null) || 'TBA';
           const rsvpUrl = e.rsvp_url || e.source_url;
 
           card.innerHTML = `
             <div class="event-header">
-              <span class="event-source">${e.source_name}</span>
-              <span class="badge badge-price">${e.price || 'Free / TBA'}</span>
+              <div>
+                <div class="event-source">${e.source_name}</div>
+                <div class="event-title"><a href="${rsvpUrl}" target="_blank" rel="noreferrer">${e.title}</a></div>
+              </div>
+              <div style="display:flex; gap:0.5rem; align-items:flex-start; flex-wrap:wrap; justify-content:flex-end;">
+                <span class="badge badge-city">${city}</span>
+                <span class="badge badge-price">${price}</span>
+              </div>
             </div>
-            <div class="event-title"><a href="${rsvpUrl}" target="_blank">${e.title}</a></div>
             <div class="meta-row">
-              <div class="meta-item">📅 ${dateStr} ${timeStr}</div>
-              <div class="meta-item">📍 ${city}</div>
-              <div class="meta-item muted">${e.location || ''}</div>
+              <div class="meta-item">📅 <b>${dateStr}</b> ${timeStr}</div>
+              ${e.location ? `<div class="meta-item">📍 ${e.location}</div>` : ''}
+              <div class="meta-item"><a href="${rsvpUrl}" target="_blank" rel="noreferrer">RSVP</a></div>
             </div>
           `;
+
           list.appendChild(card);
         }
       }
