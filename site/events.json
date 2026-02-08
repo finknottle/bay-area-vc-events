@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-08T06:49:16.702Z",
+  "generated_at": "2026-02-08T06:54:21.697Z",
   "events": [
     {
       "id": "9da11e536923d20a",
@@ -2537,21 +2537,5 @@
       "tags": []
     }
   ],
-  "errors": [
-    {
-      "source": "Sequoia Events",
-      "url": "https://www.sequoiacap.com/events/",
-      "error": "Error: 404 Not Found for https://www.sequoiacap.com/events/"
-    },
-    {
-      "source": "Greylock Events",
-      "url": "https://greylock.com/events/",
-      "error": "Error: 404 Not Found for https://greylock.com/events/"
-    },
-    {
-      "source": "Accel Events",
-      "url": "https://www.accel.com/events",
-      "error": "Error: 404 Not Found for https://www.accel.com/events"
-    }
-  ]
+  "errors": []
 }
