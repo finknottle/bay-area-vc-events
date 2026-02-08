@@ -1,0 +1,40 @@
+name: Weekly digest (generate)
+
+on:
+  schedule:
+    - cron: '30 14 * * 1'  # Mondays 14:30 UTC (~6:30am PT)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: collector/package-lock.json
+
+      - name: Install deps
+        working-directory: collector
+        run: npm ci
+
+      - name: Collect events
+        run: npm run --silent collect --prefix collector
+
+      - name: Print digest (MVP)
+        run: |
+          node - <<'NODE'
+          import fs from 'node:fs';
+          const data = JSON.parse(fs.readFileSync('data/events.json','utf8'));
+          const events = data.events || [];
+          console.log('Weekly digest (MVP):');
+          for (const e of events.slice(0, 25)) {
+            console.log(`- ${e.source_name}: ${e.title} (${e.source_url})`);
+          }
+          NODE

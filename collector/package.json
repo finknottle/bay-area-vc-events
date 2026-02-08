@@ -1,0 +1,15 @@
+{
+  "name": "bay-area-vc-events-collector",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "collect": "node src/collect.mjs"
+  },
+  "dependencies": {
+    "@extractus/article-extractor": "^8.0.6",
+    "cheerio": "^1.0.0",
+    "node-fetch": "^3.3.2",
+    "normalize-url": "^8.0.1"
+  }
+}
