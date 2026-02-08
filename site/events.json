@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-08T14:55:49.009Z",
+  "generated_at": "2026-02-08T23:59:29.209Z",
   "events": [
     {
       "id": "9da11e536923d20a",
@@ -3179,36 +3179,6 @@
       "rsvp_url": null,
       "source_name": "Luma SF (Community)",
       "source_url": "https://lu.ma/sf",
-      "tags": []
-    },
-    {
-      "id": "1be3bb311f6c8e48",
-      "title": "Local Business Owner AI Workshop using CustomGPT's",
-      "start": "2026-02-25T12:00:00-07:00",
-      "end": "2026-02-25T13:30:00-07:00",
-      "timezone": "America/Los_Angeles",
-      "location": "",
-      "city": null,
-      "price": null,
-      "region": "unknown",
-      "rsvp_url": "https://www.eventbrite.com/e/local-business-owner-ai-workshop-using-customgpts-tickets-1981874107807",
-      "source_name": "Eventbrite SF Tech",
-      "source_url": "https://www.eventbrite.com/e/local-business-owner-ai-workshop-using-customgpts-tickets-1981874107807",
-      "tags": []
-    },
-    {
-      "id": "d9fe7aeeee5dbe3b",
-      "title": "Think Before You Click: Avoiding Online & Phone Scams",
-      "start": "2026-02-20T10:00:00-08:00",
-      "end": "2026-02-20T11:00:00-08:00",
-      "timezone": "America/Los_Angeles",
-      "location": "",
-      "city": null,
-      "price": null,
-      "region": "unknown",
-      "rsvp_url": "https://www.eventbrite.com/e/think-before-you-click-avoiding-online-phone-scams-tickets-1978432807786",
-      "source_name": "Eventbrite SF Tech",
-      "source_url": "https://www.eventbrite.com/e/think-before-you-click-avoiding-online-phone-scams-tickets-1978432807786",
       "tags": []
     },
     {
