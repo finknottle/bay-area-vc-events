@@ -24,6 +24,10 @@ jobs:
         working-directory: collector
         run: npm ci
 
+      - name: Install Playwright browsers
+        working-directory: collector
+        run: npm run --silent install-browsers
+
       - name: Collect events
         run: npm run --silent collect --prefix collector
 

@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 import { SOURCES } from './sources.mjs';
 import { stableId, isLikelyDateLine } from './util.mjs';
+import { withBrowser, getRenderedHtml, extractAnchors } from './browser.mjs';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
@@ -161,37 +162,61 @@ function extractLinks(html, baseUrl, predicate) {
 }
 
 async function collectFromLumaCalendar(src) {
-  const html = await getHtml(src.url);
-  // Luma event pages are like https://lu.ma/abcd1234
-  const links = extractLinks(
-    html,
-    src.url,
-    (u) => u.startsWith('https://lu.ma/') && !u.startsWith('https://lu.ma/home')
-  );
-  const eventLinks = links.filter((u) => /^https:\/\/lu\.ma\/[a-z0-9]+$/i.test(u)).slice(0, 30);
+  // Luma calendars are client-rendered; use browser to pull event links.
+  return await withBrowser(async ({ page }) => {
+    const html = await getRenderedHtml(page, src.url);
 
-  const events = [];
-  for (const link of eventLinks) {
-    try {
-      const evHtml = await getHtml(link);
-      const parsed = parseJsonLdEvents(evHtml, { source_name: src.name, source_url: link });
-      for (const e of parsed) {
-        e.rsvp_url = e.rsvp_url || link;
-        e.source_url = link;
-        events.push(e);
+    // Find any lu.ma event URLs in rendered HTML
+    const anchors = await extractAnchors(page);
+    const links = anchors
+      .map((h) => {
+        try {
+          return new URL(h, src.url).toString();
+        } catch {
+          return null;
+        }
+      })
+      .filter(Boolean);
+
+    const eventLinks = Array.from(
+      new Set(
+        links.filter((u) => /^https:\/\/lu\.ma\/[a-z0-9]+$/i.test(u) && !u.includes('/home'))
+      )
+    ).slice(0, 40);
+
+    const events = [];
+    for (const link of eventLinks) {
+      try {
+        // event page should contain JSON-LD
+        await page.goto(link, { waitUntil: 'domcontentloaded' });
+        await page.waitForTimeout(1500);
+        const evHtml = await page.content();
+        const parsed = parseJsonLdEvents(evHtml, { source_name: src.name, source_url: link });
+        for (const e of parsed) {
+          e.rsvp_url = e.rsvp_url || link;
+          e.source_url = link;
+          events.push(e);
+        }
+      } catch {
+        // skip
       }
-    } catch {
-      // skip
     }
-  }
-  return events;
+
+    // fallback: try JSON-LD directly from calendar if present
+    if (!events.length) {
+      const parsed = parseJsonLdEvents(html, { source_name: src.name, source_url: src.url });
+      events.push(...parsed);
+    }
+
+    return events;
+  });
 }
 
 async function collectFromEventbriteListing(src) {
   const html = await getHtml(src.url);
   const links = extractLinks(html, src.url, (u) => u.includes('eventbrite.com/e/'))
     .map((u) => u.split('?')[0])
-    .slice(0, 30);
+    .slice(0, 40);
 
   const events = [];
   for (const link of links) {
@@ -210,20 +235,119 @@ async function collectFromEventbriteListing(src) {
   return events;
 }
 
+async function collectFromLumaEvent(src) {
+  return await withBrowser(async ({ page }) => {
+    await page.goto(src.url, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(1500);
+    const html = await page.content();
+    const parsed = parseJsonLdEvents(html, { source_name: src.name, source_url: src.url });
+    for (const e of parsed) {
+      e.rsvp_url = e.rsvp_url || src.url;
+      e.source_url = src.url;
+    }
+    return parsed;
+  });
+}
+
+async function collectFromXAccount(src) {
+  // Best-effort: load profile, extract outbound links to known event platforms.
+  const EVENT_DOMAINS = [
+    'lu.ma/',
+    'luma.com/',
+    'eventbrite.com/e/',
+    'meetup.com/',
+    'partiful.com/',
+    'splashthat.com/',
+    'tinyurl.com/',
+    'bit.ly/'
+  ];
+
+  return await withBrowser(async ({ page }) => {
+    await page.goto(src.url, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+
+    const anchors = await extractAnchors(page);
+    const links = anchors
+      .map((h) => {
+        try {
+          return new URL(h, src.url).toString();
+        } catch {
+          return null;
+        }
+      })
+      .filter(Boolean);
+
+    const candidates = Array.from(
+      new Set(
+        links
+          .filter((u) => EVENT_DOMAINS.some((d) => u.includes(d)))
+          .map((u) => u.split('?')[0])
+      )
+    ).slice(0, 25);
+
+    const events = [];
+    for (const link of candidates) {
+      // Only ingest pages we can parse into dated events.
+      try {
+        // Luma event pages will be handled by browser
+        if (/^https:\/\/(lu\.ma|luma\.com)\/[a-z0-9]+$/i.test(link)) {
+          await page.goto(link, { waitUntil: 'domcontentloaded' });
+          await page.waitForTimeout(1500);
+          const html = await page.content();
+          const parsed = parseJsonLdEvents(html, { source_name: src.name, source_url: link });
+          for (const e of parsed) {
+            e.rsvp_url = e.rsvp_url || link;
+            e.source_url = link;
+            e.tags = [...(e.tags || []), 'from_x'];
+            events.push(e);
+          }
+          continue;
+        }
+
+        // Eventbrite etc: fetch HTML normally
+        const evHtml = await getHtml(link);
+        const parsed = parseJsonLdEvents(evHtml, { source_name: src.name, source_url: link });
+        for (const e of parsed) {
+          e.rsvp_url = e.rsvp_url || link;
+          e.source_url = link;
+          e.tags = [...(e.tags || []), 'from_x'];
+          events.push(e);
+        }
+      } catch {
+        // ignore
+      }
+    }
+
+    return events;
+  });
+}
+
 async function main() {
   const all = [];
   const errors = [];
 
   for (const src of SOURCES) {
     try {
-      if (src.url.startsWith('https://lu.ma/') && !/^https:\/\/lu\.ma\/[a-z0-9]+$/i.test(src.url)) {
+      if (src.kind === 'luma_calendar') {
         const events = await collectFromLumaCalendar(src);
         all.push(...events);
         continue;
       }
 
-      if (src.url.includes('eventbrite.com/d/')) {
+      if (src.kind === 'luma_event') {
+        const events = await collectFromLumaEvent(src);
+        all.push(...events);
+        continue;
+      }
+
+      if (src.kind === 'eventbrite_listing') {
         const events = await collectFromEventbriteListing(src);
+        all.push(...events);
+        continue;
+      }
+
+      if (src.kind === 'x_account') {
+        const events = await collectFromXAccount(src);
         all.push(...events);
         continue;
       }
