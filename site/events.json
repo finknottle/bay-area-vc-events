@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-10T04:51:02.900Z",
+  "generated_at": "2026-02-10T04:53:28.381Z",
   "events": [
     {
       "id": "9da11e536923d20a",
@@ -3165,6 +3165,465 @@
       "source_name": "Pear VC",
       "source_url": "https://www.pear.vc/events",
       "tags": []
+    },
+    {
+      "id": "ace3c93eab90c6ef",
+      "title": "Tbilisi, Georgia Tirana Tokyo, Japan Topeka, Kansas Turin, Italy Valencia, Spain Vienna, Austria Vilnius, Lithuania Warsaw, Indiana Washington, D.C. Yerevan, Armenia Clear Frisco Founders Fundamentals",
+      "start": "2026-02-09T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "f11233e51d504a4b",
+      "title": "-> Plug and Play Lifetech Expo",
+      "start": "2026-02-10T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Indianapolis, Indiana",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "8a6710e9f6a70b2b",
+      "title": "-> Presenting & Selling to International Audiences",
+      "start": "2026-02-17T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Vilnius, Lithuania",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "62f0c1dbc8780edf",
+      "title": "-> McKinney Plug-In",
+      "start": "2026-02-19T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "McKinney, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "2b71244408a88bf7",
+      "title": "-> Frisco Plug-In",
+      "start": "2026-02-25T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "6ebc29fbe794d1ad",
+      "title": "-> Lithuania Accelerated: Startups Late-Night Show",
+      "start": "2026-02-25T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Vilnius, Lithuania",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "bcfb75e05e93e276",
+      "title": "-> Warsaw Plug-In Coffee Hour",
+      "start": "2026-02-26T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Warsaw, Indiana",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "7f32e1f5e31506d9",
+      "title": "-> Plug and Play Germany Summit 2026",
+      "start": "2026-03-10T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Munich, Germany",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "24c7a33cbb304b7c",
+      "title": "-> Frisco Plug-In",
+      "start": "2026-03-25T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "82f84b6d7c2c38fb",
+      "title": "-> Warsaw Expo | Medtech Batch 4",
+      "start": "2026-03-25T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Winona Lake, Indiana",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "08345d775618b29c",
+      "title": "-> accelerateAZ Expo 2026",
+      "start": "2026-04-07T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Phoenix, Arizona",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "b5ace0a2dccad269",
+      "title": "-> Frisco Plug-In",
+      "start": "2026-04-22T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "61b9e158c9da6271",
+      "title": "-> 2026 C3 Davos of Healthcare™ Summit",
+      "start": "2026-04-27T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Sunnyvale, California",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "34144dd761a48ac2",
+      "title": "-> Warsaw Plug-In Coffee Hour",
+      "start": "2026-04-30T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Warsaw, Indiana",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "e9fad7e71177feda",
+      "title": "-> Plug and Play Vienna Expo 7 - A Multi-Industry Masterpiece",
+      "start": "2026-05-06T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Karlsplatz 5, 1010 Wien, Austria",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "c3d23f9b47e3defc",
+      "title": "Now -> Uzbekistan Expo 2026",
+      "start": "2026-05-06T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "IT Park | Ташкент, Uzbekistan",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "a144b31acea02072",
+      "title": "-> Silicon Valley May Summit 2026",
+      "start": "2026-05-19T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Sunnyvale, California",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "8e6b4db3cf253bde",
+      "title": "-> Plug and Play Italy Summit 2026",
+      "start": "2026-06-16T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Milano, Italy",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "b4564d02ec6517bf",
+      "title": "-> Frisco Plug-In",
+      "start": "2026-06-24T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "bb895d4ca9e87356",
+      "title": "-> STARTUP AUTOBAHN Expo 2026",
+      "start": "2026-07-02T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Stuttgart, Germany",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "340d00435e16a282",
+      "title": "-> Frisco Plug-In",
+      "start": "2026-07-22T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "2409825e333ee1a2",
+      "title": "-> Frisco Plug-In",
+      "start": "2026-08-25T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "51ec0faac9bdbbe9",
+      "title": "-> Warsaw Plug-In Coffee Hour",
+      "start": "2026-08-27T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Warsaw, Indiana",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "608b91ec5c256bc9",
+      "title": "-> Frisco Plug-In",
+      "start": "2026-09-22T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "904419579548a46a",
+      "title": "-> Warsaw Plug-In Coffee Hour",
+      "start": "2026-10-22T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Warsaw, Indiana",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "1e9ce060efafb34a",
+      "title": "-> Frisco Plug-In",
+      "start": "2026-10-28T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "Frisco, Texas",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
+    },
+    {
+      "id": "90a5c957e7f3409f",
+      "title": "-> Silicon Valley November Summit 2026",
+      "start": "2026-11-17T20:00:00.000Z",
+      "end": null,
+      "timezone": "America/Los_Angeles",
+      "location": "440 N. Wolfe Rd., Sunnyvale, CA 94085",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
+      "source_name": "Plug and Play — All Events",
+      "source_url": "https://www.plugandplaytechcenter.com/all-events",
+      "tags": [
+        "rendered"
+      ]
     },
     {
       "id": "dcc16e029696b1d7",

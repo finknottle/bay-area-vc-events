@@ -6,3 +6,7 @@ site/dist/
 site/.parcel-cache/
 node_modules/
 .env
+secrets/
+collector/secrets/
+**/gmail_token.json
+**/gmail_oauth_client.json

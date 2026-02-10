@@ -162,6 +162,65 @@ function extractLinks(html, baseUrl, predicate) {
   return [...hrefs.values()];
 }
 
+function parseMonthDateToIso(dateStr) {
+  // Examples: "Feb 09, 2026" or "February 9, 2026"
+  const d = new Date(`${dateStr} 12:00:00 GMT-0800`); // midday PT to avoid edge issues
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toISOString();
+}
+
+async function collectFromPlugAndPlayAllEvents(src) {
+  // Plug and Play events list is client-rendered and does not expose JSON-LD.
+  // We use the rendered HTML and a lightweight regex to extract: Title, Date, Location.
+  return await withBrowser(async ({ page }) => {
+    const html = await getRenderedHtml(page, src.url);
+    const $ = cheerio.load(html);
+
+    // Get a compact text view of the page (helps avoid brittle CSS selectors)
+    const text = $('body').text().replace(/\s+/g, ' ').trim();
+
+    const month = '(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)';
+    const re = new RegExp(`([^]{0,200}?)\\s+${month}\\s+([0-3]?\\d),\\s+(20\\d\\d)\\s*([^]{0,120}?)\\s*(Register|Register Now|Apply for a ticket)`, 'gi');
+
+    const events = [];
+    let m;
+    while ((m = re.exec(text)) !== null) {
+      const rawTitle = (m[1] || '').replace(/(Events|In-Person|Webinar|Other|Search event\.\.\.|Upcoming|Past|All industries|All locations|Clear)\s*$/i, '').trim();
+      const mon = m[2];
+      const day = m[3];
+      const year = m[4];
+      const rawLoc = (m[5] || '').trim();
+
+      const dateHuman = `${mon} ${day}, ${year}`;
+      const start = parseMonthDateToIso(dateHuman);
+      if (!rawTitle || !start) continue;
+
+      const id = stableId(src.name, rawTitle, start);
+      events.push({
+        id,
+        title: rawTitle.slice(0, 200),
+        start,
+        end: null,
+        timezone: 'America/Los_Angeles',
+        location: rawLoc,
+        city: null,
+        price: null,
+        region: 'unknown',
+        rsvp_url: src.url,
+        source_name: src.name,
+        source_url: src.url,
+        tags: ['rendered']
+      });
+
+      if (events.length >= 120) break;
+    }
+
+    // De-dupe by id
+    const uniq = new Map(events.map((e) => [e.id, e]));
+    return [...uniq.values()];
+  });
+}
+
 async function collectFromLumaCalendar(src) {
   // Luma calendars are client-rendered; use browser to pull event links.
   return await withBrowser(async ({ page }) => {
@@ -343,6 +402,12 @@ async function main() {
 
       if (src.kind === 'eventbrite_listing') {
         const events = await collectFromEventbriteListing(src);
+        all.push(...events);
+        continue;
+      }
+
+      if (src.kind === 'plugandplay_all_events') {
+        const events = await collectFromPlugAndPlayAllEvents(src);
         all.push(...events);
         continue;
       }
