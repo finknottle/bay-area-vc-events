@@ -6,7 +6,8 @@
   "scripts": {
     "collect": "node src/collect.mjs",
     "install-browsers": "playwright install --with-deps chromium",
-    "gmail:auth": "node scripts/gmail_auth.mjs"
+    "gmail:auth": "node scripts/gmail_auth.mjs",
+    "gmail:test": "node scripts/gmail_test.mjs"
   },
   "dependencies": {
     "@extractus/article-extractor": "^8.0.6",
