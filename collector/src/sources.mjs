@@ -3,6 +3,10 @@ export const SOURCES = [
   { name: 'Lightspeed Events', url: 'https://lsvp.com/events/', kind: 'html' },
   { name: 'Pear VC', url: 'https://www.pear.vc/events', kind: 'html' },
 
+  // New sources
+  { name: 'Plug and Play — All Events', url: 'https://www.plugandplaytechcenter.com/all-events', kind: 'html' },
+  { name: 'Bay Area Founders Club (Substack)', url: 'https://bayareafoundersclub.substack.com/', kind: 'html' },
+
   // Luma calendars (rendered client-side) — use browser collector
   { name: 'Luma — pear.vc', url: 'https://luma.com/pear.vc', kind: 'luma_calendar' },
   { name: 'Luma — usr-LeHV7SEMDPComtM', url: 'https://luma.com/user/usr-LeHV7SEMDPComtM', kind: 'luma_calendar' },

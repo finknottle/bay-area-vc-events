@@ -10,7 +10,10 @@
       h1 { font-size: 1.875rem; font-weight: 800; margin: 0 0 0.25rem; }
       .muted { color: #6b7280; font-size: 0.9rem; }
       .topbar { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; margin: 1.25rem 0; }
-      input { padding: 0.75rem 1rem; width: min(560px, 100%); border: 1px solid #d1d5db; border-radius: 0.75rem; box-sizing: border-box; font-size: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+      input { padding: 0.75rem 1rem; width: min(420px, 100%); border: 1px solid #d1d5db; border-radius: 0.75rem; box-sizing: border-box; font-size: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+      select { padding: 0.65rem 0.8rem; border: 1px solid #d1d5db; border-radius: 0.75rem; background: white; font-size: 0.95rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+      .check { display:flex; align-items:center; gap:0.4rem; font-size:0.92rem; color:#374151; user-select:none; }
+      .check input { width:auto; box-shadow:none; }
       .counts { font-size: 0.85rem; color: #6b7280; }
 
       .event-card { background: white; padding: 1.1rem 1.15rem; border-radius: 0.85rem; margin-bottom: 0.9rem; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
@@ -41,11 +44,29 @@
   <body>
     <div class="container">
       <h1>Bay Area VC Events</h1>
-      <div class="muted">Only upcoming events • sorted by date • click any title to RSVP.</div>
+      <div class="muted">Upcoming events • grouped by day • click any title to RSVP.</div>
 
       <div class="topbar">
         <input id="q" placeholder="Search: AI, demo day, Palo Alto, YC, pitch..." />
-        <div class="counts" id="counts"></div>
+
+        <div style="display:flex; gap:0.65rem; flex-wrap:wrap; align-items:center; justify-content:flex-end;">
+          <select id="city">
+            <option value="">All cities</option>
+          </select>
+
+          <select id="range">
+            <option value="all">Any time</option>
+            <option value="7">Next 7 days</option>
+            <option value="30">Next 30 days</option>
+          </select>
+
+          <label class="check">
+            <input id="free" type="checkbox" />
+            Free only
+          </label>
+
+          <div class="counts" id="counts"></div>
+        </div>
       </div>
 
       <div id="list"></div>
@@ -82,8 +103,9 @@
       }
 
       function looksLikeFree(price) {
-        const p = (price || '').toString().toLowerCase();
-        return p === 'free' || p.includes('$0') || p.includes('no cost');
+        const p = (price || '').toString().toLowerCase().trim();
+        if (!p) return false;
+        return p === 'free' || p.includes('free') || p.includes('$0') || p.includes('no cost');
       }
 
       function formatWhen(e) {
@@ -108,13 +130,18 @@
         return { dateStr, timeStr: range, dayKey };
       }
 
-      function render(events, q) {
+      function render(events, state) {
         const list = document.getElementById('list');
         const counts = document.getElementById('counts');
         list.innerHTML = '';
 
-        const query = (q || '').toLowerCase().trim();
+        const query = (state?.q || '').toLowerCase().trim();
+        const cityFilter = (state?.city || '').trim();
+        const freeOnly = !!state?.free;
+        const rangeDays = state?.rangeDays || null;
+
         const now = new Date();
+        const rangeEnd = rangeDays ? new Date(now.getTime() + rangeDays * 24 * 60 * 60 * 1000) : null;
 
         const matchesQuery = (e) => {
           if (!query) return true;
@@ -122,16 +149,29 @@
           return searchStr.includes(query);
         };
 
+        const matchesCity = (e) => {
+          if (!cityFilter) return true;
+          const c = e.city || inferCity(e.location) || 'Bay Area';
+          return c === cityFilter;
+        };
+
+        const matchesFree = (e) => {
+          if (!freeOnly) return true;
+          return looksLikeFree(e.price);
+        };
+
         const withDates = [];
         const tbdDates = [];
 
         for (const e of (events || [])) {
-          if (!matchesQuery(e)) continue;
+          if (!matchesQuery(e) || !matchesCity(e) || !matchesFree(e)) continue;
 
           const hasStart = !!e.start && !Number.isNaN(new Date(e.start).getTime());
           if (hasStart) {
             const d = new Date(e.start);
-            if (d >= now) withDates.push(e);
+            if (d < now) continue;
+            if (rangeEnd && d > rangeEnd) continue;
+            withDates.push(e);
           } else {
             tbdDates.push(e);
           }
@@ -144,7 +184,7 @@
         counts.textContent = `${upcomingCount} upcoming${tbdCount ? ` • ${tbdCount} date TBD` : ''}`;
 
         if (!upcomingCount && !tbdCount) {
-          list.innerHTML = '<div class="muted">No events match your search.</div>';
+          list.innerHTML = '<div class="muted">No events match your filters.</div>';
           return;
         }
 
@@ -249,11 +289,50 @@
         }
       }
 
+      function getCityLabel(e) {
+        return e.city || inferCity(e.location) || 'Bay Area';
+      }
+
+      function buildCityOptions(events) {
+        const el = document.getElementById('city');
+        const cities = Array.from(new Set((events || []).map(getCityLabel))).sort((a, b) => a.localeCompare(b));
+
+        // Reset to default option
+        el.innerHTML = '<option value="">All cities</option>';
+        for (const c of cities) {
+          const opt = document.createElement('option');
+          opt.value = c;
+          opt.textContent = c;
+          el.appendChild(opt);
+        }
+      }
+
+      function readState() {
+        const q = document.getElementById('q').value || '';
+        const city = document.getElementById('city').value || '';
+        const free = document.getElementById('free').checked;
+        const rangeRaw = document.getElementById('range').value;
+        const rangeDays = rangeRaw === 'all' ? null : Number(rangeRaw);
+        return { q, city, free, rangeDays };
+      }
+
       (async function() {
         const events = await load();
+
+        buildCityOptions(events);
+
         const q = document.getElementById('q');
-        render(events, '');
-        q.addEventListener('input', () => render(events, q.value));
+        const city = document.getElementById('city');
+        const free = document.getElementById('free');
+        const range = document.getElementById('range');
+
+        const rerender = () => render(events, readState());
+
+        rerender();
+        q.addEventListener('input', rerender);
+        city.addEventListener('change', rerender);
+        free.addEventListener('change', rerender);
+        range.addEventListener('change', rerender);
       })();
     </script>
   </body>
