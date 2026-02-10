@@ -8,6 +8,7 @@ import { resolve } from 'node:path';
 
 const ROOT = resolve(new URL('..', import.meta.url).pathname, '..');
 const OUT = resolve(ROOT, 'data', 'events.json');
+const OUT_SITE = resolve(ROOT, 'site', 'events.json');
 
 async function getHtml(url) {
   const res = await fetch(url, {
@@ -366,13 +367,16 @@ async function main() {
     uniq.set(e.id, e);
   }
 
-  await mkdir(resolve(ROOT, 'data'), { recursive: true });
-  await writeFile(
-    OUT,
-    JSON.stringify({ generated_at: new Date().toISOString(), events: [...uniq.values()], errors }, null, 2)
-  );
+  const payload = JSON.stringify({ generated_at: new Date().toISOString(), events: [...uniq.values()], errors }, null, 2);
 
-  console.log(`Wrote ${uniq.size} events to ${OUT} (${errors.length} source errors)`);
+  await mkdir(resolve(ROOT, 'data'), { recursive: true });
+  await writeFile(OUT, payload);
+
+  // GitHub Pages serves the static site; keep a copy of the dataset next to index.html
+  await mkdir(resolve(ROOT, 'site'), { recursive: true });
+  await writeFile(OUT_SITE, payload);
+
+  console.log(`Wrote ${uniq.size} events to ${OUT} and ${OUT_SITE} (${errors.length} source errors)`);
 }
 
 main().catch((err) => {

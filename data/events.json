@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-10T04:39:14.955Z",
+  "generated_at": "2026-02-10T04:51:02.900Z",
   "events": [
     {
       "id": "9da11e536923d20a",
@@ -3332,21 +3332,6 @@
       "tags": []
     },
     {
-      "id": "8c1fbbc89d7fcb22",
-      "title": "San Francisco Tech Networking Meetup",
-      "start": "2026-02-20T19:00:00-08:00",
-      "end": "2026-02-20T23:30:00-08:00",
-      "timezone": "America/Los_Angeles",
-      "location": "199 Valencia St — 199 Valencia Street, San Francisco, CA 94103, San Francisco, CA",
-      "city": null,
-      "price": null,
-      "region": "unknown",
-      "rsvp_url": "https://www.eventbrite.com/e/san-francisco-tech-networking-meetup-tickets-1980780570006",
-      "source_name": "Eventbrite SF Tech",
-      "source_url": "https://www.eventbrite.com/e/san-francisco-tech-networking-meetup-tickets-1980780570006",
-      "tags": []
-    },
-    {
       "id": "0d94d83a2bf9ec08",
       "title": "Tech Career Fair: Exclusive Tech Hiring Event",
       "start": "2026-02-27T09:00:00-08:00",
@@ -3359,6 +3344,21 @@
       "rsvp_url": "https://www.eventbrite.com/e/tech-career-fair-exclusive-tech-hiring-event-tickets-79886997159",
       "source_name": "Eventbrite SF Tech",
       "source_url": "https://www.eventbrite.com/e/tech-career-fair-exclusive-tech-hiring-event-tickets-79886997159",
+      "tags": []
+    },
+    {
+      "id": "8c1fbbc89d7fcb22",
+      "title": "San Francisco Tech Networking Meetup",
+      "start": "2026-02-20T19:00:00-08:00",
+      "end": "2026-02-20T23:30:00-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "199 Valencia St — 199 Valencia Street, San Francisco, CA 94103, San Francisco, CA",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.eventbrite.com/e/san-francisco-tech-networking-meetup-tickets-1980780570006",
+      "source_name": "Eventbrite SF Tech",
+      "source_url": "https://www.eventbrite.com/e/san-francisco-tech-networking-meetup-tickets-1980780570006",
       "tags": []
     },
     {
