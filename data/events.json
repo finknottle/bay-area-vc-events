@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-08T23:59:29.209Z",
+  "generated_at": "2026-02-10T04:39:14.955Z",
   "events": [
     {
       "id": "9da11e536923d20a",
@@ -3167,18 +3167,18 @@
       "tags": []
     },
     {
-      "id": "04b47f02d15c30d2",
-      "title": "Consciousness, Intelligence & Spirituality with Swami Sarvapriyananda",
-      "start": null,
-      "end": null,
+      "id": "dcc16e029696b1d7",
+      "title": "Nexus & Canapi Ventures Entrepreneurial Mixer",
+      "start": "2025-03-13T17:30:00.000-07:00",
+      "end": "2025-03-13T19:00:00.000-07:00",
       "timezone": "America/Los_Angeles",
-      "location": "",
+      "location": "Blum Hall — Blum Hall, Berkeley, California",
       "city": null,
-      "price": null,
+      "price": "Free",
       "region": "unknown",
-      "rsvp_url": null,
-      "source_name": "Luma SF (Community)",
-      "source_url": "https://lu.ma/sf",
+      "rsvp_url": "https://luma.com/11l05xui",
+      "source_name": "Luma — single event seed",
+      "source_url": "https://luma.com/11l05xui",
       "tags": []
     },
     {
@@ -3209,21 +3209,6 @@
       "rsvp_url": "https://www.eventbrite.com/e/tech-networking-event-in-san-francisco-tickets-1968265144030",
       "source_name": "Eventbrite SF Tech",
       "source_url": "https://www.eventbrite.com/e/tech-networking-event-in-san-francisco-tickets-1968265144030",
-      "tags": []
-    },
-    {
-      "id": "6f64eb0a519a5908",
-      "title": "Tech Startups Networking Event: Connecting Founders & Service Providers SF",
-      "start": "2026-02-09T19:00:00-08:00",
-      "end": "2026-02-09T22:00:00-08:00",
-      "timezone": "America/Los_Angeles",
-      "location": "Harry's Bar SF — 2020 Fillmore Street, San Francisco, CA 94115, San Francisco, CA",
-      "city": null,
-      "price": null,
-      "region": "unknown",
-      "rsvp_url": "https://www.eventbrite.com/e/tech-startups-networking-event-connecting-founders-service-providers-sf-tickets-1979528474956",
-      "source_name": "Eventbrite SF Tech",
-      "source_url": "https://www.eventbrite.com/e/tech-startups-networking-event-connecting-founders-service-providers-sf-tickets-1979528474956",
       "tags": []
     },
     {
@@ -3272,6 +3257,21 @@
       "tags": []
     },
     {
+      "id": "e4ebc4bcb67b6fb9",
+      "title": "Tech Startups Networking Event: Connecting Founders & Service Providers SF",
+      "start": "2026-03-23T19:00:00-07:00",
+      "end": "2026-03-23T22:00:00-07:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Harry's Bar SF — 2020 Fillmore Street, San Francisco, CA 94115, San Francisco, CA",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.eventbrite.com/e/tech-startups-networking-event-connecting-founders-service-providers-sf-tickets-1982441257166",
+      "source_name": "Eventbrite SF Tech",
+      "source_url": "https://www.eventbrite.com/e/tech-startups-networking-event-connecting-founders-service-providers-sf-tickets-1982441257166",
+      "tags": []
+    },
+    {
       "id": "f4904b3bf13d0dab",
       "title": "Age of Tech x Biopharma Panel & Mixer",
       "start": "2026-02-25T17:30:00-08:00",
@@ -3284,21 +3284,6 @@
       "rsvp_url": "https://www.eventbrite.com/e/age-of-tech-x-biopharma-panel-mixer-tickets-1974500820105",
       "source_name": "Eventbrite SF Tech",
       "source_url": "https://www.eventbrite.com/e/age-of-tech-x-biopharma-panel-mixer-tickets-1974500820105",
-      "tags": []
-    },
-    {
-      "id": "e1973539effffabf",
-      "title": "Women in Tech: Engineering, Product, Data & Beyond - SF Team Ticket",
-      "start": "2026-06-10T18:00:00-07:00",
-      "end": "2026-06-10T20:30:00-07:00",
-      "timezone": "America/Los_Angeles",
-      "location": "TBA - Looking for a host! — 100 First Street 6th Floor, San Francisco, CA 94105, San Francisco, CA",
-      "city": null,
-      "price": null,
-      "region": "unknown",
-      "rsvp_url": "https://www.eventbrite.com/e/women-in-tech-engineering-product-data-beyond-sf-team-ticket-tickets-1975344570786",
-      "source_name": "Eventbrite SF Tech",
-      "source_url": "https://www.eventbrite.com/e/women-in-tech-engineering-product-data-beyond-sf-team-ticket-tickets-1975344570786",
       "tags": []
     },
     {
@@ -3329,6 +3314,21 @@
       "rsvp_url": "https://www.eventbrite.com/e/women-in-tech-connect-san-francisco-2026-tickets-981814612937",
       "source_name": "Eventbrite SF Tech",
       "source_url": "https://www.eventbrite.com/e/women-in-tech-connect-san-francisco-2026-tickets-981814612937",
+      "tags": []
+    },
+    {
+      "id": "e1973539effffabf",
+      "title": "Women in Tech: Engineering, Product, Data & Beyond - SF Team Ticket",
+      "start": "2026-06-10T18:00:00-07:00",
+      "end": "2026-06-10T20:30:00-07:00",
+      "timezone": "America/Los_Angeles",
+      "location": "TBA - Looking for a host! — 100 First Street, 6th Floor, San Francisco, CA 94105, San Francisco, CA",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.eventbrite.com/e/women-in-tech-engineering-product-data-beyond-sf-team-ticket-tickets-1975344570786",
+      "source_name": "Eventbrite SF Tech",
+      "source_url": "https://www.eventbrite.com/e/women-in-tech-engineering-product-data-beyond-sf-team-ticket-tickets-1975344570786",
       "tags": []
     },
     {
@@ -3422,18 +3422,18 @@
       "tags": []
     },
     {
-      "id": "a39d19188f9429ff",
-      "title": "New City San Fran - Tech",
-      "start": "2026-02-18T18:00:00-05:00",
-      "end": "2026-02-18T20:00:00-05:00",
+      "id": "013ad42325d668d6",
+      "title": "SF Startup & Tech Mixer 2026",
+      "start": "2026-02-26T18:00:00-08:00",
+      "end": "2026-02-26T21:00:00-08:00",
       "timezone": "America/Los_Angeles",
-      "location": "Alchemist Bar &amp; Lounge — 679 3rd St, San Francisco, CA 94107, San Francisco, San Francisco",
+      "location": "Toy Soldier — 52 Belden Place, San Francisco, CA 94104, San Francisco, CA",
       "city": null,
       "price": null,
       "region": "unknown",
-      "rsvp_url": "https://www.eventbrite.com/e/new-city-san-fran-tech-tickets-1974947194222",
+      "rsvp_url": "https://www.eventbrite.com/e/sf-startup-tech-mixer-2026-tickets-1981963075913",
       "source_name": "Eventbrite SF Tech",
-      "source_url": "https://www.eventbrite.com/e/new-city-san-fran-tech-tickets-1974947194222",
+      "source_url": "https://www.eventbrite.com/e/sf-startup-tech-mixer-2026-tickets-1981963075913",
       "tags": []
     }
   ],
