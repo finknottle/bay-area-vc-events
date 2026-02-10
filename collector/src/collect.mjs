@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio';
 import { SOURCES } from './sources.mjs';
 import { stableId, isLikelyDateLine } from './util.mjs';
 import { withBrowser, getRenderedHtml, extractAnchors } from './browser.mjs';
+import { gmailCollectEventLinks } from './gmail.mjs';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
@@ -385,6 +386,54 @@ async function collectFromXAccount(src) {
 async function main() {
   const all = [];
   const errors = [];
+
+  // Optional: Gmail ingestion (read-only). Enabled when env vars point to token files.
+  const GMAIL_OAUTH_CLIENT = process.env.GMAIL_OAUTH_CLIENT;
+  const GMAIL_TOKEN = process.env.GMAIL_TOKEN;
+
+  // 0) Pull event links from Gmail, then parse those event pages like any other source.
+  if (GMAIL_OAUTH_CLIENT && GMAIL_TOKEN) {
+    try {
+      const { links, meta } = await gmailCollectEventLinks({
+        clientPath: GMAIL_OAUTH_CLIENT,
+        tokenPath: GMAIL_TOKEN,
+        maxMessages: 80,
+        query: 'newer_than:90d'
+      });
+
+      const gmailEvents = [];
+      for (const link of links) {
+        try {
+          // Use browser for Luma (often client rendered); otherwise plain fetch.
+          if (/^https:\/\/(lu\.ma|luma\.com)\//i.test(link)) {
+            const parsed = await collectFromLumaEvent({ name: 'Gmail', url: link, kind: 'luma_event' });
+            for (const e of parsed) {
+              e.tags = [...(e.tags || []), 'from_gmail'];
+              gmailEvents.push(e);
+            }
+          } else {
+            const evHtml = await getHtml(link);
+            const parsed = parseJsonLdEvents(evHtml, { source_name: 'Gmail', source_url: link });
+            for (const e of parsed) {
+              e.rsvp_url = e.rsvp_url || link;
+              e.source_url = link;
+              e.tags = [...(e.tags || []), 'from_gmail'];
+              gmailEvents.push(e);
+            }
+          }
+        } catch {
+          // ignore individual link failures
+        }
+      }
+
+      all.push(...gmailEvents);
+      console.log(`Gmail: scanned ${meta.scanned} messages, found ${meta.found} candidate links, parsed ${gmailEvents.length} events`);
+    } catch (e) {
+      errors.push({ source: 'Gmail', url: 'gmail://me', error: String(e) });
+    }
+  } else {
+    console.log('Gmail: not enabled (set GMAIL_OAUTH_CLIENT and GMAIL_TOKEN to enable)');
+  }
 
   for (const src of SOURCES) {
     try {

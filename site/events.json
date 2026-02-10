@@ -1,6 +1,448 @@
 {
-  "generated_at": "2026-02-10T04:53:28.381Z",
+  "generated_at": "2026-02-10T06:46:30.524Z",
   "events": [
+    {
+      "id": "6d49b823ae38d636",
+      "title": "AI Journal Club for Researchers ft. ​Ben Coleman (Google Deepmind)",
+      "start": "2026-02-10T18:00:00.000-08:00",
+      "end": "2026-02-10T20:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Workato — Workato, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/uglaf7c5",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/uglaf7c5",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "934e8b265bbf4ba1",
+      "title": "⛷️ Ski Camp AI: Building Agents and MCP",
+      "start": "2026-02-12T17:30:00.000-08:00",
+      "end": "2026-02-12T20:30:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Digital Jungle SF — Digital Jungle SF, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://o.lu.ma/OKW8LN7ZNk",
+      "source_name": "Gmail",
+      "source_url": "https://o.lu.ma/OKW8LN7ZNk",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "5a14a6a496fc9612",
+      "title": "GenAI: Tech Deep Dive into Real-Time Video Generation",
+      "start": "2026-02-19T17:30:00.000-08:00",
+      "end": "2026-02-19T22:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "European Startup Embassy — European Startup Embassy, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://o.lu.ma/jl9L0PrPmM",
+      "source_name": "Gmail",
+      "source_url": "https://o.lu.ma/jl9L0PrPmM",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "392ebad2c7bedd97",
+      "title": "AI Youth Hackathon with Lovable - 🧠 The AI Collective Tri-Valley Chapter",
+      "start": "2026-02-28T10:00:00.000-08:00",
+      "end": "2026-02-28T14:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Dublin, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://o.lu.ma/nrDNMuKte2",
+      "source_name": "Gmail",
+      "source_url": "https://o.lu.ma/nrDNMuKte2",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "ebbd68ab79f99f18",
+      "title": "Canadian Space Day 2026: Dialogue with Leading Space Experts & Reception",
+      "start": "2026-02-09T16:00:00.000-08:00",
+      "end": "2026-02-09T18:15:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "94104 — 94104, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/CANADASPACEDAY",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/CANADASPACEDAY",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "5ae57146356c3b3d",
+      "title": "Vapi AI x Lovable x Hathora | Build & Deploy Your Voice Agent Workshop + Hackathon",
+      "start": "2026-02-09T17:00:00.000-08:00",
+      "end": "2026-02-09T21:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/build-voice-agent-for-your-startup-works",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/build-voice-agent-for-your-startup-works",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "6ed5261fa01c3aed",
+      "title": "WorkOS AI Night w/ The Pragmatic Engineer",
+      "start": "2026-02-09T17:30:00.000-08:00",
+      "end": "2026-02-09T20:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "WorkOS — WorkOS, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/workos-pragmatic",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/workos-pragmatic",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "4bfb07446bbccdc5",
+      "title": "BioML Seminar 4.1 - Designing proteins with language models",
+      "start": "2026-02-09T19:30:00.000-08:00",
+      "end": "2026-02-09T21:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Berkeley, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/dknwfirh",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/dknwfirh",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "24f538ce8e447505",
+      "title": "FC SF • Founders Run & Coffee!",
+      "start": "2026-02-10T07:00:00.000-08:00",
+      "end": "2026-02-10T09:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Blue Bottle Coffee — Blue Bottle Coffee, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/2opylbqn",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/2opylbqn",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "005712b847685f58",
+      "title": "Founder Breakfast",
+      "start": "2026-02-10T09:00:00.000-08:00",
+      "end": "2026-02-10T11:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/2h91fhhv",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/2h91fhhv",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "aa31f3903bd8bb8e",
+      "title": "Hacking Agents AI Meetup - February Edition",
+      "start": "2026-02-10T17:00:00.000-08:00",
+      "end": "2026-02-10T21:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "IBM — IBM, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/utvcobkp",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/utvcobkp",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "87af100705641c0d",
+      "title": "Selling in the Age of AI: Fireside Chat with Perplexity CEO Aravind Srinivas and Tech GTM Expert Rich Liu",
+      "start": "2026-02-10T17:30:00.000-08:00",
+      "end": "2026-02-10T20:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/vnige8yh",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/vnige8yh",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "ce1fa47c1736c904",
+      "title": "AI founders breakfast: Building vertical AI companies",
+      "start": "2026-02-11T09:00:00.000-08:00",
+      "end": "2026-02-11T11:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/gbejjcj0",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/gbejjcj0",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "409c7b6cb2bc939a",
+      "title": "Consciousness, Intelligence & Spirituality with Swami Sarvapriyananda",
+      "start": "2026-02-11T16:30:00.000-08:00",
+      "end": "2026-02-11T18:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/swami-spc",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/swami-spc",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "2a58c34480fe3457",
+      "title": "AI Healthtech Night | Anthropic, DigitalOcean, & Workato",
+      "start": "2026-02-11T18:00:00.000-08:00",
+      "end": "2026-02-11T20:30:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/259dydkd",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/259dydkd",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "ad9693ebdbd33b69",
+      "title": "DevEx demo night",
+      "start": "2026-02-11T18:00:00.000-08:00",
+      "end": "2026-02-11T21:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "85 2nd St ste 700 — 85 2nd St ste 700, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/gnrmc2ke",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/gnrmc2ke",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "b22f0e980bda1ec7",
+      "title": "Women Founders Pitch Night",
+      "start": "2026-02-12T17:00:00.000-08:00",
+      "end": "2026-02-12T20:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "usd19",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/zqp7waez",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/zqp7waez",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "afdb0de2f6e048b2",
+      "title": "Unicorn Battle in Silicon Valley",
+      "start": "2026-02-12T17:00:00.000-08:00",
+      "end": "2026-02-12T20:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Silkroad Innovation Hub — Silkroad Innovation Hub, Palo Alto, California",
+      "city": null,
+      "price": "usd39",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/aoowunfh",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/aoowunfh",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "b14363f0f3f21725",
+      "title": "Generative UI Night at WorkOS (Feat A2UI, AG-UI, MCP Apps)",
+      "start": "2026-02-12T18:00:00.000-08:00",
+      "end": "2026-02-12T20:30:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "WorkOS — WorkOS, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/yder4lvm",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/yder4lvm",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "b5c3b54024ceeeb5",
+      "title": "SPC Demo Night",
+      "start": "2026-02-12T18:30:00.000-08:00",
+      "end": "2026-02-12T21:30:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/spcfebdemonight",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/spcfebdemonight",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "14b0b749bd8f12f2",
+      "title": "Artifact Festival",
+      "start": "2026-02-13T16:00:00.000-08:00",
+      "end": "2026-02-13T20:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/artifact",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/artifact",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "dc255524214bc783",
+      "title": "ImagineArt Launch Night",
+      "start": "2026-02-13T17:00:00.000-08:00",
+      "end": "2026-02-13T22:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/6saewc7d",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/6saewc7d",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "2365a2d837de998a",
+      "title": "AI Meets Robotics – Launch & Fund Your Own Startup (Edition 1)",
+      "start": "2026-02-14T08:00:00.000-08:00",
+      "end": "2026-02-14T20:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "MindsDB — MindsDB, San Francisco, California",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/ai-meets-robotics-sf",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/ai-meets-robotics-sf",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "8a0235c29bcbe536",
+      "title": "Build What You Love - Women in Tech Hackathon",
+      "start": "2026-02-14T09:00:00.000-08:00",
+      "end": "2026-02-14T17:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "San Francisco, California — Register to See Address",
+      "city": null,
+      "price": "usd10",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/ic3l89gi",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/ic3l89gi",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "a881aff164e802e4",
+      "title": "Scrappy AI Founders Go Kayaking",
+      "start": "2026-02-15T10:30:00.000-08:00",
+      "end": "2026-02-15T14:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Santa Cruz, California — Register to See Address",
+      "city": null,
+      "price": "Free",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/tdlu5enk",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/tdlu5enk",
+      "tags": [
+        "from_gmail"
+      ]
+    },
+    {
+      "id": "c5bc401460c879c1",
+      "title": "Fortune Cookies & Code: Fortune, Prediction, and Data Traces",
+      "start": "2026-02-15T12:00:00.000-08:00",
+      "end": "2026-02-15T14:00:00.000-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "tiat — tiat, San Francisco, California",
+      "city": null,
+      "price": "usd25",
+      "region": "unknown",
+      "rsvp_url": "https://lu.ma/oj2z3o0n",
+      "source_name": "Gmail",
+      "source_url": "https://lu.ma/oj2z3o0n",
+      "tags": [
+        "from_gmail"
+      ]
+    },
     {
       "id": "9da11e536923d20a",
       "title": "Marketplaces",
@@ -3184,23 +3626,6 @@
       ]
     },
     {
-      "id": "f11233e51d504a4b",
-      "title": "-> Plug and Play Lifetech Expo",
-      "start": "2026-02-10T20:00:00.000Z",
-      "end": null,
-      "timezone": "America/Los_Angeles",
-      "location": "Indianapolis, Indiana",
-      "city": null,
-      "price": null,
-      "region": "unknown",
-      "rsvp_url": "https://www.plugandplaytechcenter.com/all-events",
-      "source_name": "Plug and Play — All Events",
-      "source_url": "https://www.plugandplaytechcenter.com/all-events",
-      "tags": [
-        "rendered"
-      ]
-    },
-    {
       "id": "8a6710e9f6a70b2b",
       "title": "-> Presenting & Selling to International Audiences",
       "start": "2026-02-17T20:00:00.000Z",
@@ -3235,12 +3660,12 @@
       ]
     },
     {
-      "id": "2b71244408a88bf7",
-      "title": "-> Frisco Plug-In",
+      "id": "6ebc29fbe794d1ad",
+      "title": "-> Lithuania Accelerated: Startups Late-Night Show",
       "start": "2026-02-25T20:00:00.000Z",
       "end": null,
       "timezone": "America/Los_Angeles",
-      "location": "Frisco, Texas",
+      "location": "Vilnius, Lithuania",
       "city": null,
       "price": null,
       "region": "unknown",
@@ -3252,12 +3677,12 @@
       ]
     },
     {
-      "id": "6ebc29fbe794d1ad",
-      "title": "-> Lithuania Accelerated: Startups Late-Night Show",
+      "id": "2b71244408a88bf7",
+      "title": "-> Frisco Plug-In",
       "start": "2026-02-25T20:00:00.000Z",
       "end": null,
       "timezone": "America/Los_Angeles",
-      "location": "Vilnius, Lithuania",
+      "location": "Frisco, Texas",
       "city": null,
       "price": null,
       "region": "unknown",
@@ -3303,12 +3728,12 @@
       ]
     },
     {
-      "id": "24c7a33cbb304b7c",
-      "title": "-> Frisco Plug-In",
+      "id": "82f84b6d7c2c38fb",
+      "title": "-> Warsaw Expo | Medtech Batch 4",
       "start": "2026-03-25T20:00:00.000Z",
       "end": null,
       "timezone": "America/Los_Angeles",
-      "location": "Frisco, Texas",
+      "location": "Winona Lake, Indiana",
       "city": null,
       "price": null,
       "region": "unknown",
@@ -3320,12 +3745,12 @@
       ]
     },
     {
-      "id": "82f84b6d7c2c38fb",
-      "title": "-> Warsaw Expo | Medtech Batch 4",
+      "id": "24c7a33cbb304b7c",
+      "title": "-> Frisco Plug-In",
       "start": "2026-03-25T20:00:00.000Z",
       "end": null,
       "timezone": "America/Los_Angeles",
-      "location": "Winona Lake, Indiana",
+      "location": "Frisco, Texas",
       "city": null,
       "price": null,
       "region": "unknown",
@@ -3791,21 +4216,6 @@
       "tags": []
     },
     {
-      "id": "0d94d83a2bf9ec08",
-      "title": "Tech Career Fair: Exclusive Tech Hiring Event",
-      "start": "2026-02-27T09:00:00-08:00",
-      "end": "2026-02-27T12:00:00-08:00",
-      "timezone": "America/Los_Angeles",
-      "location": "Moved to Virtual Event — Online, San Francisco, CA 94013, San Francisco, CA",
-      "city": null,
-      "price": null,
-      "region": "unknown",
-      "rsvp_url": "https://www.eventbrite.com/e/tech-career-fair-exclusive-tech-hiring-event-tickets-79886997159",
-      "source_name": "Eventbrite SF Tech",
-      "source_url": "https://www.eventbrite.com/e/tech-career-fair-exclusive-tech-hiring-event-tickets-79886997159",
-      "tags": []
-    },
-    {
       "id": "8c1fbbc89d7fcb22",
       "title": "San Francisco Tech Networking Meetup",
       "start": "2026-02-20T19:00:00-08:00",
@@ -3818,6 +4228,21 @@
       "rsvp_url": "https://www.eventbrite.com/e/san-francisco-tech-networking-meetup-tickets-1980780570006",
       "source_name": "Eventbrite SF Tech",
       "source_url": "https://www.eventbrite.com/e/san-francisco-tech-networking-meetup-tickets-1980780570006",
+      "tags": []
+    },
+    {
+      "id": "0d94d83a2bf9ec08",
+      "title": "Tech Career Fair: Exclusive Tech Hiring Event",
+      "start": "2026-02-27T09:00:00-08:00",
+      "end": "2026-02-27T12:00:00-08:00",
+      "timezone": "America/Los_Angeles",
+      "location": "Moved to Virtual Event — Online, San Francisco, CA 94013, San Francisco, CA",
+      "city": null,
+      "price": null,
+      "region": "unknown",
+      "rsvp_url": "https://www.eventbrite.com/e/tech-career-fair-exclusive-tech-hiring-event-tickets-79886997159",
+      "source_name": "Eventbrite SF Tech",
+      "source_url": "https://www.eventbrite.com/e/tech-career-fair-exclusive-tech-hiring-event-tickets-79886997159",
       "tags": []
     },
     {
